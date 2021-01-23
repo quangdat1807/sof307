@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascrip.js"></script>
+    <meta name="description" content="https://github.com/hohieuit/javascript-coban/blob/master/de%20bai/1_function.txt">
+    <title>Bài tập hàm</title>
+</head>
+<body>
+    <div id="ketqua"></div>
+    <script>
+        var nodeKetQua = document.getElementById("ketqua");
+        var HTMLKetQua = "";
+        
+        HTMLKetQua = HTMLKetQua + `<p>Bài 1,2: Tổng: ${tong()} <br> Hiệu: ${hieu()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 3,4: Tích: ${tich()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 5,6,7: Thương: ${thuong()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 8,9: Bình phương: ${binhPhuong()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 10,11: Max: ${max()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 12,13: Min: ${min()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 14,15: Giá trị trung bình: ${giaTriTb()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 16,17,18: Chia lấy dư: <br>${chiaLayDu(10,5)} <br> ${chiaLayDu(9,10)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 19,20,21: Chia hết: <br>${coChiaHet(10,6)} <br> ${coChiaHet(10,5)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 22,23,24: Chu vi chữ nhật: ${chuViChuNhat()} <br> Diện tích chữ nhật: ${dienTichChuNhat()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 25,27: Chu vi hình tròn: ${chuViHinhTron()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 26,28: Diện tích hình tròn: ${dienTichHinhTron()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 1,2: Nối chuỗi: ${noiChuoi()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 3,4: In hoa: ${inHoa()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 5,6: Chuỗi cha, con: <br> ${coTonTai()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 7: Độ dài: ${doDoDai()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 8: Cắt chuỗi: ${catChuoi()}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 9: Chuỗi con: ${chuoiCon()}</p>`;
+        nodeKetQua.innerHTML=HTMLKetQua;
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+    <script src="js/hoTro.js"></script>
+    <script src="js/sanPham.js"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .themMoiSanPham {
+            width: 30%;
+            border: 1px solid #444;
+            margin: 0 auto;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 2px 2px 5px #ddd;
+        }
+        .themMoiSanPham label, input {
+            width: 100%;
+            display: block;
+        }
+        .themMoiSanPham label {
+            margin-top: 10px;
+        }
+
+        .themMoiSanPham input {
+            margin-top: 5px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .themMoiSanPham button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: chocolate;
+            color: #fff;
+        }
+        .themMoiSanPham button:hover {
+            background-color: #c53624;
+        }
+        .themMoiSanPham .error {
+            font-size: 12px;
+            font-style: italic;
+            color: red;
+            line-height: 12px;
+            height: 12px;
+        }
+    </style>
+</head>
+<body>
+    <p id="trangChu"></p>
+    <div class="themMoiSanPham">
+        <label for="hinhAnh">Hình ảnh sản phẩm</label>
+        <input type="text" id="hinhAnh">
+        <label for="hinhAnh" id="thongBaoLoiChoHinhAnh" class="error"></label>
+
+        <label for="ten">Tên sản phẩm</label>
+        <input type="text" id="ten">
+        <label for="ten" id="thongBaoLoiChoTen" class="error"></label>
+
+        <label for="giaGoc">Giá gốc</label>
+        <input type="number" id="giaGoc">
+        <label for="giaGoc" id="thongBaoLoiChoGiaGoc" class="error"></label>
+
+        <label for="phanTramGG">Giảm giá (%) 0-1</label>
+        <input type="number" id="phanTramGG">
+        <label for="phanTramGG" id="thongBaoLoiChoPhanTramGG" class="error"></label>
+
+        <label for="khuVuc">Khu vực</label>
+        <input type="text" id="khuVuc">
+        <label for="khuVuc" id="thongBaoLoiChoKhuVuc" class="error"></label>
+
+        <button onclick="onClickTaoSanPham()" class="btn">Tạo sản phẩm</button>
+        
+    </div>
+
+    <script>
+        var str = 'Trang chủ';
+        var linkLk = str.link('trangChu.html');
+        document.getElementById('trangChu').innerHTML = linkLk;
+
+        var danhSachSanPham = JSON.parse(localStorage.getItem('danhSachSanPham'));
+        if(danhSachSanPham == null)
+            danhSachSanPham = new Array();
+        console.log(danhSachSanPham);
+        
+        function onClickTaoSanPham() {
+            //kiemtra
+            if(kiemTraFromDangKi() == true) {
+                var nodeHinhAnh = document.getElementById('hinhAnh');
+                var hinhAnh = nodeHinhAnh.value;
+                console.log('Hình ảnh: ' + hinhAnh);
+
+                var nodeTen = document.getElementById('ten');
+                var ten = nodeTen.value;
+                console.log('Tên: ' + ten);
+
+                var nodeGiaGoc = document.getElementById('giaGoc');
+                var giaGoc = parseInt(nodeGiaGoc.value);
+                console.log('Giá gốc: ' + giaGoc);
+
+                var nodeGiamGia = document.getElementById('phanTramGG');
+                var giamGia = parseFloat(nodeGiamGia.value);
+                console.log('Phần trăm giảm giá: ' + giamGia);
+
+                var nodeKhuVuc = document.getElementById('khuVuc');
+                var khuVuc = nodeKhuVuc.value;
+                console.log('Khu vực: ' + khuVuc);
+
+                var sanPham = taoDoiTuongSanPham(hinhAnh, ten, giaGoc, giamGia, khuVuc);
+                console.log(sanPham);
+                console.log('Tên: ' + sanPham.ten + ' Giá bán: ' + sanPham.tinhGiaBan());
+
+                danhSachSanPham.push(sanPham);
+
+                var jsonDanhSachSanPham = JSON.stringify(danhSachSanPham);
+                localStorage.setItem('danhSachSanPham', jsonDanhSachSanPham);
+                
+            }
+            
+        }
+        function kiemTraFromDangKi() {
+            var hopLe = true;
+            //truy cập node để lấy dữ liệu
+            var nodeHinhAnh = document.getElementById('hinhAnh');
+            var nodeTen = document.getElementById('ten');
+            var nodeGiaGoc = document.getElementById('giaGoc');
+            var nodePhanTramGiamGia = document.getElementById('phanTramGG');
+            var nodeKhuVuc = document.getElementById('khuVuc');
+            var hinhAnh = nodeHinhAnh.value;
+            var ten = nodeTen.value;
+            var giaGoc = nodeGiaGoc.value;
+            var phanTramGG = nodePhanTramGiamGia.value;
+            var khuVuc = nodeKhuVuc.value;
+            console.log(hinhAnh);
+            console.log(ten);
+            console.log(giaGoc);
+            console.log(phanTramGG);
+            console.log(khuVuc);
+
+            
+            var nodeThongBaoLoiHinhAnh = document.getElementById('thongBaoLoiChoHinhAnh');
+            var nodeThongBaoLoiChoTen = document.getElementById('thongBaoLoiChoTen');
+            var nodeThongBaoLoiChoGiaGoc = document.getElementById('thongBaoLoiChoGiaGoc');
+            var nodeThongBaoLoiChoPhanTramGG = document.getElementById('thongBaoLoiChoPhanTramGG');
+            var nodeThongBaoLoiChoKhuVuc = document.getElementById('thongBaoLoiChoKhuVuc');
+            nodeThongBaoLoiHinhAnh.innerHTML = '';
+            nodeThongBaoLoiChoTen.innerHTML = '';
+            nodeThongBaoLoiChoGiaGoc.innerHTML = '';
+            nodeThongBaoLoiChoPhanTramGG.innerHTML = '';
+            nodeThongBaoLoiChoKhuVuc.innerHTML = '';
+            //Ktra xem dữ liệu có hợp lệ
+            if(hinhAnh == null || hinhAnh.length <=0) {
+                nodeThongBaoLoiHinhAnh.innerHTML = 'Hình ảnh không hợp lệ!';
+                hopLe = false;
+            }
+            if(ten == null || ten.length <=0) {
+                nodeThongBaoLoiChoTen.innerHTML = 'Tên không hợp lệ!';
+                hopLe = false;
+            }
+            if(giaGoc == null || giaGoc.length <=0) {
+                nodeThongBaoLoiChoGiaGoc.innerHTML = 'Giá không hợp lệ!';
+                hopLe = false;
+            }
+            if(phanTramGG == null || phanTramGG <=0 || phanTramGG > 1 || phanTramGG < 0) {
+                nodeThongBaoLoiChoPhanTramGG.innerHTML = 'Phần trăm giá không hợp lệ!';
+                hopLe = false;
+            }
+            if(khuVuc == null || khuVuc.length <=0) {
+                nodeThongBaoLoiChoKhuVuc.innerHTML = 'Khu vực không hợp lệ!';
+                hopLe = false;
+            }
+            return hopLe;
+        }
+    </script>
+</body>
+</html>

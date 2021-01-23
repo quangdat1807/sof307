@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <script src="https://kit.fontawesome.com/0d6eca819f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/sanPham.js"></script>
+    <script src="js/hoTro.js"></script>
+    <script src="js/gioHang.js"></script>
+    <script src="js/mess.js"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        input {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .gioHang {
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 4px #ddd;
+            margin: auto;
+            max-width: 1100px;
+            padding: 20px;
+            margin-top: 25px;
+        }
+
+        .gioHang .tieuDe {
+            font-size: 20px;
+            color: #f7452e;
+            margin-bottom: 20px;
+        }
+
+        .itemGioHang {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .gioHang .tieuDeItemGioHang {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .itemGioHang .hinhAnh img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .itemGioHang .hinhAnh {
+            width: 60px;
+        }
+
+        .itemGioHang input {
+            width: 100%;
+        }
+
+        .itemGioHang 
+        .itemGioHang .hinhAnh, .soLuong, .tongTien, .hanhDong {
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .itemGioHang .gia {
+            flex: 2;
+        }
+        
+        .itemGioHang .ten {
+            flex: 3;
+        }
+
+        .itemGioHang .gia .giaGoc {
+            font-size: 12px;
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .itemGioHang .gia .giaBan {
+            color: #f7452e;
+        }
+
+        .itemGioHang .hanhDong i {
+            color: black;
+        }
+        .itemGioHang .hanhDong i:hover {
+            color: #f7452e;
+            zoom: 1.05;
+        }
+
+        .customer-info {
+            max-width: 1100px;
+            margin: auto;
+            margin-top: 40px;
+            border: 1px solid #ddd;
+            box-shadow: 2px 2px 4px #ddd;
+            padding: 25px;
+        }
+        .customer-info .customer-info-title{
+            font-size: 16px;
+            color: #F7452E;
+        }
+
+        .customer-info label,input{
+            display: block;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .customer-info input{
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 5px;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .customer-info input:focus{
+            border: 1px solid cornflowerblue;
+        }
+
+        .customer-info input:invalid{
+            border: 1px solid red;
+        }
+
+        .customer-info label{
+            margin-top: 20px;
+        }
+
+        .customer-info .btn{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section id="message" class="message">
+
+    </section>
+    <nav id="nav-bar">
+        <ul class="menu-lv1">
+            <div class="logo">
+                <a href="trangChu.html">
+                    <img src="https://clickbuy.com.vn/clickbuy-logo-xuan.png" alt="">
+                </a>
+            </div>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="phone">Điện thoại</a>
+                </div>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">IOS</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">Android</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="tablet">Tablet</a>
+                </div>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="macbook">Macbook</a>
+                </div>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="phuKien">Phụ kiện</a>
+                </div>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="hangCu">Hàng cũ</a>
+                </div>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">Điện thoại</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">Tablet</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-lv1">
+                <a href="gioHang.html">
+                    <i class="fas fa-cart-plus"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="gioHang" class="gioHang">
+        <h1 class="tieuDe">Danh sách sản phẩm</h1>
+        <div class="itemGioHang tieuDeItemGioHang">
+            <div class="hinhAnh">
+                
+            </div>
+
+            <p class="ten">Sản phẩm </p>
+            <div class="gia">
+                Đơn giá
+            </div>
+            <p class="soLuong">Số lượng</p>
+            <p class="tongTien">Tổng tiền</p>
+            <div class="hanhDong">
+                <p>Thao tác</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="thongTinKhacHang">
+
+    </div>
+    <form class="customer-info">
+        <h1 class="customer-info-title">Mua hàng</h1>
+        <label for="hoten">Họ tên</label>
+        <input type="text" name="hoten" id="hoten">
+        <label for="phonenumber">Số điện thoại</label>
+        <input type="number" name="phonenumber" id="phonenumber">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <label for="ngaysinh">Ngày sinh</label>
+        <input type="date" name="ngaysinh" id="ngaysinh">
+        <label for="thoigiannhanhang">Thời gian nhận hàng trong ngày 8-18h</label>
+        <input type="number" name="thoigiannhanhang" id="thoigiannhanhang" min="8" max="18">
+        <input type="submit" class="btn btn-primary" value="Mua hàng">
+    </form>
+
+    <footer>
+        Design by @QD 2020
+    </footer>
+    <script>
+        hienThiGioHang();
+        function hienThiGioHang() {
+            var danhSachItemGioHang = layDanhSachGioHangTuLocal();
+
+            var html = chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang);
+
+            var nodeGioHang = document.getElementById('gioHang');
+            nodeGioHang.innerHTML = html;
+            
+        }
+
+    </script>
+</body>
+</html>

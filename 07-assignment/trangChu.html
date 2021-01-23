@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/0d6eca819f.js" crossorigin="anonymous"></script>
+    <script src="js/sanPham.js"></script>
+    <script src="js/hoTro.js"></script>
+    <script src="js/gioHang.js"></script>
+    <script src="js/mess.js"></script> 
+</head>
+<body>
+    <section id="message" class="message">
+
+    </section>
+    <nav id="nav-bar">
+        <ul class="menu-lv1">
+            <div class="logo">
+                <a href="trangChu.html">
+                    <img src="https://clickbuy.com.vn/clickbuy-logo-xuan.png" alt="">
+                </a>
+            </div>
+            <div class="box">
+                <div class="container">
+                    <input type="text" autocomplete="off" id="search" placeholder=" Bạn cần tìm gì ..." >
+                    <button onclick="onclickSearch()" class="icon"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="phone">Điện thoại</a>
+                </div>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">IOS</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">Android</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="tablet">Tablet</a>
+                </div>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="macbook">Macbook</a>
+                </div>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="phuKien">Phụ kiện</a>
+                </div>
+            </li>
+            <li class="item-lv1">
+                <div class="colors sub-a object">
+                    <a href="#" class="item-lv1-title" id="hangCu">Hàng cũ</a>
+                </div>
+                <ul class="menu-lv2">
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">Điện thoại</a>
+                    </li>
+                    <li class="item-lv2">
+                        <a href="#" class="item-lv2-title">Tablet</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="item-lv1">
+                <a href="gioHang.html">
+                    <i class="fas fa-cart-plus"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <section id="slider" class="slider">
+        <div class="slideshow-all">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="55" style="width:100%">
+                </div>
+        
+                <div class="mySlides fade">
+                    <img src="55" style="width:100%">
+                </div>
+        
+                <div class="mySlides fade">
+                    <img src="55" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="55" style="width:100%">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="55" style="width:100%">
+                </div>
+            </div>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(0)">Siêu bão khuyến mãi - 09/5 đến 16/5</span> 
+                <span class="dot" onclick="currentSlide(1)">Check in giảm ngay - 100k</span> 
+                <span class="dot" onclick="currentSlide(2)">Mi 10/ mi 10 pro Flagship 2020</span>
+                <span class="dot" onclick="currentSlide(3)">Iphone x new chưa active giá cực tốt</span>
+                <span class="dot" onclick="currentSlide(4)">Ipad pro 2020 - giá tốt nhất hiện nay</span>
+            </div>
+        </div>
+
+        <div class="khung-images">
+            <div class="images">
+                <a href="#"><img src="https://uqoojcos5nobj.vcdn.cloud/uploads/2021/01/ANH-NHO.png" alt=""></a>
+            </div>
+            <div class="noiBat">
+                <div class="hot">
+                    <span>Tin nổi bật</span>
+                </div>
+                <div class="tin">
+                    <a href="">
+                        <div class="anhNho">
+                            <img src="https://cfojhfzjes.vcdn.com.vn/uploads/2020/05/baiviet-sieu-bao-khuyen-mai-01-1024x536.png" alt="">
+                        </div>
+                        <div class="noiDung">
+                            Siêu bão khuyến mãi - xiaomi - realme - asus từ 09/05
+                        </div>
+                    </a>
+                </div>
+                <div class="tin">
+                    <a href="">
+                        <div class="anhNho">
+                            <img src="https://cfojhfzjes.vcdn.com.vn/uploads/2020/04/baiviet-mua-hang-online-01.png" alt="">
+                        </div>
+                        <div class="noiDung">
+                            Mua hàng online - an toàn mùa dịch
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="images-banner">
+        <img src="https://uqoojcos5nobj.vcdn.cloud/uploads/2021/01/BIA-1200.png" alt="">
+    </div>
+    <section id="products">
+        <div class="khuyenMaiHot">
+            <div class="nameS">
+                <span>Khuyến mãi hot</span>
+            </div>
+            <div id="product-sales">
+
+            </div>
+        </div>
+        <div class="phoneNoiBat">
+            <div class="nameA">
+                <span>Điện thoại nổi bật nhất</span>
+            </div>
+            <div id="product">
+                
+            </div>
+        </div>
+    </section>
+    <footer>
+        Design by @QD 2020
+    </footer>
+
+    <script>
+        //Hiển thị sản phẩm
+        var jsonDanhSachSanPham = localStorage.getItem('danhSachSanPham');
+        var danhSachSanPham = taoDoiTuongSanPham().fromJSONs(jsonDanhSachSanPham);
+        console.log(danhSachSanPham);
+        
+        var HTML = chuyenDanhSachSanPhamHtml(danhSachSanPham);
+
+        var nodeProDucts = document.getElementById('product');
+        nodeProDucts.innerHTML = HTML;
+
+        var jsonDanhSachSanPhamHot = localStorage.getItem('danhSachSanPham');
+        var danhSachSanPhamHot = taoDoiTuongSanPham().fromJSONs(jsonDanhSachSanPhamHot);
+        console.log(danhSachSanPhamHot);
+        
+        var HTMLHot = chuyenDanhSachSanPhamHotHtml(danhSachSanPhamHot);
+
+        var nodeProDuctsSale = document.getElementById('product-sales');
+        nodeProDuctsSale.innerHTML = HTMLHot;
+        //Đưa vào giỏ hàng
+        function onClickThemVaoGioHang(idSanPham) {
+            var nodeMessage = document.getElementById('message');
+            MessageService().show(nodeMessage,'Thêm vào giỏ hàng thành công');
+
+            var danhSachItemGioHang = layDanhSachGioHangTuLocal();
+
+            var tonTaiTrongDanhSachItemGioHang = false;
+            for (var i = 0; i < danhSachItemGioHang.length; i++){
+                var itemGioHangHienTai = danhSachItemGioHang[i];
+                
+                if(itemGioHangHienTai.idSanPham == idSanPham) {
+                    danhSachItemGioHang[i].soLuong++;
+                    tonTaiTrongDanhSachItemGioHang = true;
+                }
+            }
+            if(tonTaiTrongDanhSachItemGioHang == false) {
+                var itemGioHang = taoDoiTuongItemGioHang(idSanPham, 1);
+                danhSachItemGioHang.push(itemGioHang);
+            }
+
+            luuDanhSachGioHangVaoLocal(danhSachItemGioHang);
+        }
+        var slideIndex;
+        // KHai bào hàm hiển thị slide
+        function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+
+                slides[slideIndex].style.display = "block";
+                dots[slideIndex].className += " active";
+                //chuyển đến slide tiếp theo
+                slideIndex++;
+                //nếu đang ở slide cuối cùng thì chuyển về slide đầu
+                if (slideIndex > slides.length - 1) {
+                    slideIndex = 0
+                }
+                //tự động chuyển đổi slide sau 5s
+                setTimeout(showSlides, 5000);
+            }
+            //mặc định hiển thị slide đầu tiên 
+            showSlides(slideIndex = 0);
+
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+    </script>
+</body>
+</html>

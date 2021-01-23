@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascrip.js"></script>
+    <title>Đệ quy</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            background-color: #ddd;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="debai">
+            Bài 4: Xuất ra danh sách số finbonaci
+        </p>
+
+        <label for="inputSoLuongSoNguyenTo">Nhập số lượng</label>
+        <input type="number" id="inputSoLuongSoFinbo">
+
+        <button onclick="sum()">Xuất kết quả</button>
+
+        <p>Kết quả</p>
+        <p id="ketQuaDaySoFinbo">
+
+        </p>
+    </div>
+    <script>
+        function onClickXuatRaSoFinbo() {
+            var nodeInputSoLuongSoFinbo = document.getElementById('inputSoLuongSoFinbo');
+            var N = nodeInputSoLuongSoFinbo.value;
+            console.log('Bài nguyên tố - N là: ' + N);
+
+            var danhSachSoFinbo = layDanhSachNSoFinboNhoNhat(N);
+            console.log('Bài nguyên tố - danh sách số finbo là: ' + danhSachSoFinbo);
+
+            var nodeKetQuaDaySoFinbo = document.getElementById('ketQuaDaySoFinbo');
+            console.log(nodeKetQuaDaySoFinbo);
+            nodeKetQuaDaySoFinbo.innerHTML = chuyenMangThanhChuoi(danhSachSoFinbo);
+            /////
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascrip.js"></script>
+
+    <meta name="description" content="https://github.com/hohieuit/javascript-coban/blob/master/de%20bai/2_vong_lap.txt"> 
+    <meta name="description" content="https://github.com/quangdat1807/ThuatToann?fbclid=IwAR3Y2cVIehv0RsXScK1YIx5U-x8sDPTHWbG_HXJrUt4H_eE2H5CjkqXdoaU">
+    <title>Vòng lặp</title>
+
+</head>
+<body>
+    <div id="ketqua"></div>
+    <script>
+        var nodeKetQua = document.getElementById("ketqua");
+        var HTMLKetQua = "";
+        HTMLKetQua = HTMLKetQua + `<p>Bài 1,2: Lặp: ${showMessage(5)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 3,4:${sum(100)} <br> ${sum(500)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 5,6:${sumA(1,100)} <br> ${sumA(20,76)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 7,8:${sumOdd(1,100)} <br> ${sumOdd(20,76)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 9,10:<br>${xuatLe(10)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 11,12:<br>${xuatLeN(10,50)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 13:<br>${isPrime(10)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 14,15:<br>${listPrime(10)}</p>`;
+        HTMLKetQua = HTMLKetQua + `<p>Bài 16,17:<br>${listPrimeA(10,50)}</p>`;
+
+        nodeKetQua.innerHTML=HTMLKetQua;
+    </script>
+</body>
+</html>
